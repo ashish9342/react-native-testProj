@@ -6,22 +6,28 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {View, TextInput} from 'react-native';
 
-import Header from './src/Components/Header/Header';
+// import Header from './src/Components/Header/Header';
+import Home from './src/Pages/Home/Home';
 
-const App = () => {
-  return (
-    <View>
-      <Header name={'Ashish'} address={'Bangalore'} />
-      {/* inline */}
-      <TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} />
-      {/* <Text>{'Hello World'}</Text>
-      <Text>{'Hello World'}</Text> */}
-    </View>
-  );
-};
+//  Class component
+class App extends Component {
+  state = {
+    name: 'Ashish',
+    address: 'Bangalore',
+  };
+
+  render() {
+    const {name, address} = this.state;
+    return (
+      <View>
+        <Home />
+      </View>
+    );
+  }
+}
 
 // // documents styles
 // const styles = StyleSheet.create({
